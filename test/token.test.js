@@ -21,25 +21,25 @@ describe('test token.js', function () {
     })
   })
   it('test getTicket()', function (done) {
-    token.getTicket(function (err, result) {
-      assert.equal(err, null)
-      assert(result.ticket)
-      assert(result.expires_in)
-      done()
+    token.getToken(function (err, result) {
+      token.getTicket(result.access_token, function (err, result) {
+        assert.equal(err, null)
+        assert(result.ticket)
+        assert(result.expires_in)
+        done()
+      })
     })
   })
-  it('test getJsConfig()', function (done) {
+  it('test getJsConfig()', function () {
     const url = 'https://google.com'
-    token.getJsConfig(url, function (err, result) {
-      assert.equal(err, null)
-      assert.equal(result.appId, appId)
-      assert.equal(result.url, url)
-      assert.equal(typeof result.timestamp, 'number')
-      assert(result.jsapi_ticket)
-      assert(result.signature)
-      assert(result.nonceStr)
-      done()
-    })
+    const ticket = 'kgt8ON7yVITDhtdwci0qeSDIFV9vqoFKeFGn3oE4TeIuBO77GoGXo8dy74aCkLxu5WIQY5BP5iu5_6z-7NJDEQ'
+    const result = token.getJsConfig(ticket, url)
+    assert.equal(result.appId, appId)
+    assert.equal(result.url, url)
+    assert.equal(typeof result.timestamp, 'number')
+    assert(result.jsapi_ticket)
+    assert(result.signature)
+    assert(result.nonceStr)
   })
   it('test getSignature()', function () {
     const signature = 'ec2aced8907a2760c8313ada9f66d3097c46c7f6'
