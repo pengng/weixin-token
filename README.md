@@ -34,10 +34,10 @@ const config = {
   saveTicket: result => {
 
   },
-  onerror: err => {
+  onError: err => {
 
   },
-  trushIp: [
+  trustIp: [
     '192.168.1.115'
   ]
 }
@@ -55,9 +55,9 @@ app.listen(3000, () => {
 | trushIp | array | 否 | [信任ip列表](#truship) |
 | saveToken | function | 否 | [保存`access_token`的函数](#savetoken) |
 | saveTicket | function | 否 | [保存`jsapi_ticket`的函数](#saveticket) |
-| onerror | function | 否 | 推荐传入自定义函数。当内部抛出错误时，会触发此函数执行，此时可自行处理错误。 |
+| onError | function | 否 | 推荐传入自定义函数。当内部抛出错误时，会触发此函数执行，此时可自行处理错误。 |
 
-### trushIp
+### trustIp
 
 > 信任ip列表用于安全访问**获取access_token**等接口。包含在该数组中的机器ip才可以调用全部接口。默认允许`localhost`和`127.0.0.1`的方式访问全部接口，也可以传入自定义数组，允许更多ip访问。如`[ '183.29.7.22', '220.83.100.64' ]`
 
