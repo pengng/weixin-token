@@ -49,13 +49,13 @@ app.listen(3000, () => {
 })
 ```
 
-| 名称 | 类型 | 必填 | 描述 |
-| --- | --- | --- | --- |
-| list | array | 是 | 微信公众号`appId`和`appSecret`配置对象列表。<br/>用于管理多个公众号的`access_token`。`appName`也是必须的，用于在调用接口时传入，指定要操作的某个公众号。 |
-| trushIp | array | 否 | [信任ip列表](#truship) |
-| saveToken | function | 否 | [保存`access_token`的函数](#savetoken) |
-| saveTicket | function | 否 | [保存`jsapi_ticket`的函数](#saveticket) |
-| onError | function | 否 | 推荐传入自定义函数。当内部抛出错误时，会触发此函数执行，此时可自行处理错误。 |
+| 名称         | 类型       | 必填   | 描述                                       |
+| ---------- | -------- | ---- | ---------------------------------------- |
+| list       | array    | 是    | 微信公众号`appId`和`appSecret`配置对象列表。<br/>用于管理多个公众号的`access_token`。`appName`也是必须的，用于在调用接口时传入，指定要操作的某个公众号。 |
+| trushIp    | array    | 否    | [信任ip列表](#truship)                       |
+| saveToken  | function | 否    | [保存`access_token`的函数](#savetoken)        |
+| saveTicket | function | 否    | [保存`jsapi_ticket`的函数](#saveticket)       |
+| onError    | function | 否    | 推荐传入自定义函数。当内部抛出错误时，会触发此函数执行，此时可自行处理错误。   |
 
 ### trustIp
 
@@ -187,11 +187,16 @@ Date: Thu, 21 Sep 2017 10:51:44 GMT
 Content-Type: application/json
 
 {
-  "timestamp":1505991638792,
+  "timestamp":"1506415650",
   "url":"http://host.com/path/to/resource",
-  "jsapi_ticket":"kgt8ON7yVITDhtdwci0qeSDIFV9vqoFKeFGn3oE4TeLu7ZMSXd8oqn0FfcfrBV7Q0Do7yZRX-PRSrReunCwN1A",
   "signature":"3447fed531f1c2b34d70f0e2953e348a2ff76872",
   "appId":"wx74205b421dc1f3eb",
   "nonceStr":"X9LoMEjK2GJ"
 }
 ```
+> 通过`query`传递`url`时，`url`要注意编码，如下
+
+```javascript
+location.href = 'http://example.host.com/appName?url=' + encodeURIComponent(location.href)
+```
+
