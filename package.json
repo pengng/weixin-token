@@ -1,29 +1,29 @@
 {
-  "name": "weixin-token",
-  "version": "0.0.8",
-  "description": "wechat token middleware",
-  "main": "index.js",
-  "scripts": {
-    "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pengng/weixin-token.git"
-  },
-  "keywords": [
-    "wechat",
-    "access",
-    "token",
-    "middleware"
-  ],
-  "author": "yupeng.kuo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pengng/weixin-token/issues"
-  },
-  "homepage": "https://github.com/pengng/weixin-token#readme",
-  "dependencies": {
-    "express": "^4.15.4",
-    "request": "^2.82.0"
-  }
+    "name": "weixin-token",
+    "version": "0.0.8",
+    "description": "wechat token middleware",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pengng/weixin-token.git"
+    },
+    "keywords": [
+        "wechat",
+        "access",
+        "token",
+        "middleware"
+    ],
+    "author": "yupeng.kuo",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/pengng/weixin-token/issues"
+    },
+    "homepage": "https://github.com/pengng/weixin-token#readme",
+    "dependencies": {
+        "express": "^4.15.4",
+        "request": "^2.82.0"
+    }
 }
