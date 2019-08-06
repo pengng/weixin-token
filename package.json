@@ -1,20 +1,20 @@
 {
     "name": "weixin-token",
-    "version": "0.0.8",
-    "description": "wechat token middleware",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha"
-    },
+    "version": "0.1.0",
+    "description": "微信公众号 access token 管理工具",
+    "main": "lib/manager.js",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/pengng/weixin-token.git"
     },
     "keywords": [
-        "wechat",
-        "access",
-        "token",
-        "middleware"
+        "微信",
+        "公众号",
+        "服务号",
+        "access token",
+        "jsapi ticket",
+        "jsapi config",
+        "wechat"
     ],
     "author": "yupeng.kuo",
     "license": "ISC",
@@ -22,8 +22,5 @@
         "url": "https://github.com/pengng/weixin-token/issues"
     },
     "homepage": "https://github.com/pengng/weixin-token#readme",
-    "dependencies": {
-        "express": "^4.15.4",
-        "request": "^2.82.0"
-    }
+    "dependencies": {}
 }
